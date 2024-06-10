@@ -1,4 +1,7 @@
-def filter_by_state(list_of_data: list[dict], condition="EXECUTED") -> list[dict]:
+from typing import List, Dict, Any
+
+
+def filter_by_state(list_of_data: List[Dict[str, Any]], condition: str="EXECUTED") -> List[Dict[str, Any]]:
     """Принимает список словарей и возвращает новый список словарей,
     у которых ключ содержит переданное в функцию значение"""
     filtered_list = []
@@ -8,7 +11,7 @@ def filter_by_state(list_of_data: list[dict], condition="EXECUTED") -> list[dict
     return filtered_list
 
 
-def sort_by_date(list_of_data: list[dict], reverse_list: bool = True) -> list[dict]:
+def sort_by_date(list_of_data: List[Dict[str, Any]], reverse_list: bool = True) -> List[Dict[str, Any]]:
     """Принимает список словарей и возвращает отсортированный по дате список"""
     sorted_list = sorted(list_of_data, key=lambda date_list: date_list.get("date"), reverse=reverse_list)
     return sorted_list
